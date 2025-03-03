@@ -18,7 +18,7 @@ Hij mag NIET handmatig aangepast worden.
 
 ## Overzicht
 
-This is a dummy description of this app features
+Agorakit is collaborative teamwork software. By creating groups, participants can discuss, set dates, share documents and keep everyone up to date. Agorakit is a forum, a calendar, a file manager, a mapping tool and e-mail notification.
 
 
 **Geleverde versie:** 1.9.3~ynh1
