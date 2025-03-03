@@ -1,0 +1,68 @@
+#:schema https://raw.githubusercontent.com/YunoHost/apps/master/schemas/manifest.v2.schema.json
+
+packaging_format = 2
+
+id = "agorakit"
+name = "Agorakit"
+description.en = "Groupware for citizens to organize on the Web"
+description.fr = "Logiciel de groupe permettant aux citoyens de s'organiser sur le Web"
+
+version = "1.9.3~ynh1"
+
+maintainers = ["eric_G"]
+
+[upstream]
+license = "AGPL-3.0-only"
+website = "http://agorakit.org/"
+demo = "https://app.agorakit.org/"
+admindoc = "https://docs.agorakit.org/index.html"
+code = "https://github.com/agorakit/agorakit"
+
+[integration]
+yunohost = ">= 12.0.9"
+helpers_version = "2.1"
+architectures = "all"
+multi_instance = true
+
+ldap = false
+sso = false
+
+disk = "50M"
+ram.build = "50M"
+ram.runtime = "50M"
+
+[install]
+    [install.domain]
+    type = "domain"
+
+    [install.path]
+    type = "path"
+    default = "/agorakit"
+
+    [install.init_main_permission]
+    type = "group"
+    default = "visitors"
+
+[resources]
+
+    [resources.sources]
+
+    [resources.sources.main]
+    url = "https://github.com/agorakit/agorakit/archive/refs/tags/1.9.3.tar.gz"
+    sha256 = "5298a609546a562d533cf9ec6647be9522f8efee281b0f3174e3e1b927a42780"
+    autoupdate.strategy = "latest_github_tag"
+
+    [resources.system_user]
+    allow_email = true
+
+    [resources.install_dir]
+    group = "www-data:r-x"
+
+    [resources.permissions]
+    main.url = "/"
+
+    [resources.apt]
+    packages = "mariadb-server, php8.4-imap, php8.4-curl, php8.4-mysql, php8.4-mbstring, php8.4-tidy, php8.4-xml, php8.4-zip, php8.4-gd"
+
+    [resources.database]
+    type = "mysql"
