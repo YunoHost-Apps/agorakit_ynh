@@ -1,1 +1,1 @@
-Ceci est une fausse description des fonctionalités de l'app
+Agorakit est un logiciel collaboratif de travail en équipe. En créant des groupes, les participants peuvent discuter, fixer des dates, partager des documents et tenir tout le monde à jour. Agorakit est un forum, un calendrier, un gestionnaire de fichiers, un outil de cartographie et de notification par e-mail.
