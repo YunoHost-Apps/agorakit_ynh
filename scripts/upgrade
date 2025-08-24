@@ -21,10 +21,21 @@ ynh_app_setting_set_default --key=php_post_max_size --value=10M
 ynh_script_progression "Upgrading source files..."
 
 # Download, check integrity, uncompress and patch the source from manifest.toml
-#ynh_setup_source --dest_dir="$install_dir" --full_replace --keep=".env"
+ynh_setup_source --dest_dir="$install_dir" --full_replace --keep=".env"
 
 pushd $install_dir
-	php$php_version update
+	ynh_script_progression "Refreshing dependencies...\n"
+	ynh_composer_install
+	ynh_composer_exec install --no-dev
+
+	ynh_script_progression "Updating database...\n"
+	php$php_version artisan migrate --force
+
+	ynh_script_progression "Clearing cache...\n"
+	php$php_version artisan view:cache
+	php$php_version artisan config:cache
+	php$php_version artisan event:cache
+	php$php_version artisan route:clear
 popd
 
 #=================================================
