@@ -7,7 +7,7 @@ name = "Agorakit"
 description.en = "Groupware for citizens to organize on the Web"
 description.fr = "Logiciel de groupe permettant aux citoyens de s'organiser sur le Web"
 
-version = "1.11~ynh1"
+version = "1.11.3~ynh1"
 
 maintainers = ["eric_G"]
 
@@ -48,8 +48,8 @@ ram.runtime = "50M"
     [resources.sources]
 
     [resources.sources.main]
-    url = "https://github.com/agorakit/agorakit/archive/refs/tags/v1.11.tar.gz"
-    sha256 = "ee35a7e142789c9c82318660cd83a2edfc7c11997c04bbadd9fbfb2a84c57551"
+    url = "https://github.com/agorakit/agorakit/archive/refs/tags/v1.11.3.tar.gz"
+    sha256 = "c9ed09645893590922f04475a25b54b7ee15aca1d423d7d1f5a17727fe04e698"
     autoupdate.strategy = "latest_github_tag"
 
     [resources.system_user]
